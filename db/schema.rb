@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140406093710) do
+ActiveRecord::Schema.define(:version => 20140406095542) do
+
+  create_table "charges", :force => true do |t|
+    t.integer  "lawyer_id",                 :null => false
+    t.integer  "service_id",                :null => false
+    t.integer  "cost",       :default => 0, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "charges", ["lawyer_id"], :name => "index_charges_on_lawyer_id"
+  add_index "charges", ["service_id", "lawyer_id"], :name => "index_charges_on_service_id_and_lawyer_id", :unique => true
 
   create_table "cities", :force => true do |t|
     t.string   "name",          :limit => 250,                :null => false
