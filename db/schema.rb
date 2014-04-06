@@ -37,8 +37,12 @@ ActiveRecord::Schema.define(:version => 20140406093710) do
   add_index "lawyers", ["rating"], :name => "index_lawyers_on_rating", :unique => true
 
   create_table "services", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "code",       :limit => 250, :null => false
+    t.string   "name",       :limit => 250, :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
+
+  add_index "services", ["code"], :name => "index_services_on_code", :unique => true
 
 end
