@@ -7,6 +7,12 @@ gem 'rails', '3.2.16'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+## Added by Anush
+gem 'friendly_id', '4.0.10.1'
+## Till here
+
+
+
 gem 'pg', '0.17.1'
 
 
