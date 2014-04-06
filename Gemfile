@@ -9,6 +9,11 @@ gem 'rails', '3.2.16'
 
 ## Added by Anush
 gem 'friendly_id', '4.0.10.1'
+
+group :development do
+  gem 'rails-erd', '1.1.0'
+end
+
 ## Till here
 
 
