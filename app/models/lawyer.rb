@@ -5,6 +5,7 @@ class Lawyer < ActiveRecord::Base
 
 
   has_many :charges, inverse_of: :lawyer, dependent: :destroy
+  has_many :services, through: :charges
   belongs_to :city, inverse_of: :lawyers, counter_cache: true
 
 
@@ -14,5 +15,10 @@ class Lawyer < ActiveRecord::Base
   validates :experience, presence: true
   validates :rating, presence: true
   validates :charges_count, presence: true
+
+
+  def self.search_lawyers(city, service)
+    joins(:services).where("services.id" => service, "lawyers.city_id" => city)
+  end
 
 end

@@ -1,4 +1,4 @@
 <%= collection_select(nil, "cities", @cities, "name", "name", include_blank: "Select City", selected: cookies[:city]) %>
-<% if @service_flag %>
+<% if @city_flag %>
   <%= collection_select(nil, "services", @services, "code", "name", include_blank: "Select Service") %>
 <% end %>
