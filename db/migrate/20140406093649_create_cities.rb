@@ -3,7 +3,6 @@ class CreateCities < ActiveRecord::Migration
     create_table :cities do |t|
       t.string :name, null: false, limit: 250
       t.integer :lawyers_count, null: false, default: 0
-      t.integer :services_count, null: false, default: 0
       t.timestamps
     end
   end
