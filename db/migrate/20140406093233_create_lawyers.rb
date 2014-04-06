@@ -6,7 +6,7 @@ class CreateLawyers < ActiveRecord::Migration
       t.string :name, null: false, limit: 250
       t.integer :experience, null: false, default: 0
       t.float :rating, null: false, default: 0
-      t.charges_count, null: false, default: 0
+      t.integer :charges_count, null: false, default: 0
       t.timestamps
     end
     add_index :lawyers, :city_id
