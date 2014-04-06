@@ -14,8 +14,11 @@
 ActiveRecord::Schema.define(:version => 20140406093710) do
 
   create_table "cities", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",           :limit => 250,                :null => false
+    t.integer  "lawyers_count",                 :default => 0, :null => false
+    t.integer  "services_count",                :default => 0, :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
   create_table "lawyers", :force => true do |t|
